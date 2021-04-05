@@ -10,7 +10,6 @@ int main(int argc, char *argv[])
 
     myclass m; MySlot ms;
 
-    //QObject::connect(&m, SIGNAL(priorityChanged(myclass::Priority)), &ms, SLOT(slot(myclass::Priority)));
     QObject::connect(&m, SIGNAL(priorityChanged(Priority)), &ms, SLOT(slot1()));
     QObject::connect(&m, &myclass::priorityChanged, &ms, &MySlot::slot2);
     QObject::connect(&m, &myclass::priorityChanged, [] () {
